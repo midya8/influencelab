@@ -23,11 +23,18 @@ jobs:
           python -m influencelab demo > /tmp/demo.json
           python -m influencelab audit examples/input.json > /tmp/input.json
           python examples/render_demo.py --check
+          python -m influencelab path-demo > /tmp/path-demo.json
+          python -m influencelab trace examples/path-input.json > /tmp/path-input.json
+          python examples/render_paths.py --check
           python -c "import json; from pathlib import Path; a=json.loads(Path('examples/demo.json').read_text()); assert json.loads(Path('/tmp/demo.json').read_text())==a; assert json.loads(Path('/tmp/input.json').read_text())==a['undamped']"
+          python -c "import json; from pathlib import Path; from influencelab import trace_deletion; a=json.loads(Path('examples/path-demo.json').read_text()); assert json.loads(Path('/tmp/path-demo.json').read_text())==a; b=json.loads(Path('/tmp/path-input.json').read_text()); expected=dict(a['paths']['row5']); expected.pop('sum_of_individual_endpoint_deltas'); expected.pop('group_minus_sum_of_individual_deltas'); assert b==expected"
       - run: |
           python -m pip wheel --no-deps -w /tmp/wheels .
           python -m pip install --no-deps --target /tmp/installed /tmp/wheels/*.whl
           cd /tmp
           python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" demo > /tmp/wheel-demo.json
           python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" audit "$GITHUB_WORKSPACE/examples/input.json" > /tmp/wheel-input.json
+          python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" path-demo > /tmp/wheel-path-demo.json
+          python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" trace "$GITHUB_WORKSPACE/examples/path-input.json" > /tmp/wheel-path-input.json
           python -c "import json; from pathlib import Path; assert json.loads(Path('/tmp/demo.json').read_text())==json.loads(Path('/tmp/wheel-demo.json').read_text()); assert json.loads(Path('/tmp/input.json').read_text())==json.loads(Path('/tmp/wheel-input.json').read_text())"
+          python -c "import json; from pathlib import Path; assert json.loads(Path('/tmp/path-demo.json').read_text())==json.loads(Path('/tmp/wheel-path-demo.json').read_text()); assert json.loads(Path('/tmp/path-input.json').read_text())==json.loads(Path('/tmp/wheel-path-input.json').read_text())"
