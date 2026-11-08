@@ -1,0 +1,1690 @@
+{
+  "damped": {
+    "damping": 0.5,
+    "damping_scope": "H+damping*I is an inverse approximation, not a refit with larger ridge",
+    "derivative_parameter": "one unit of sample weight; base weights all 1",
+    "effective_cholesky": [
+      [
+        0.9168310227785341,
+        0.0
+      ],
+      [
+        0.12413538507351948,
+        1.1176059550634405
+      ]
+    ],
+    "effective_hessian": [
+      [
+        0.840579124329133,
+        0.11381117205996205
+      ],
+      [
+        0.11381117205996205,
+        1.2644526646206158
+      ]
+    ],
+    "fit": {
+      "cholesky": [
+        [
+          0.5835915732163488,
+          0.0
+        ],
+        [
+          0.19501853228057153,
+          0.8523030192881799
+        ]
+      ],
+      "converged": true,
+      "gradient": [
+        1.996080384314425e-12,
+        -4.7867196317774585e-12
+      ],
+      "hessian": [
+        [
+          0.34057912432913295,
+          0.11381117205996205
+        ],
+        [
+          0.11381117205996205,
+          0.7644526646206158
+        ]
+      ],
+      "history": [
+        {
+          "iteration": 0,
+          "max_abs_gradient": 0.14285714285714285,
+          "objective": 0.6931471805599453,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 1,
+          "max_abs_gradient": 0.002861296649268069,
+          "objective": 0.6678460114370376,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 2,
+          "max_abs_gradient": 3.4119673856143617e-06,
+          "objective": 0.6678359912082825,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 3,
+          "max_abs_gradient": 4.7867196317774585e-12,
+          "objective": 0.6678359911945871
+        }
+      ],
+      "max_abs_gradient": 4.7867196317774585e-12,
+      "normalizer": 7,
+      "objective": 0.6678359911945871,
+      "parameter_error_l2_bound": 5.186233868028759e-11,
+      "ridge": 0.1,
+      "theta": [
+        -0.275487844484189,
+        0.22024887432001322
+      ],
+      "tolerance": 1e-10,
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "is_exact_undamped_derivative": false,
+    "model": "fully regularized binary logistic; explicit feature columns",
+    "objective": "sum(w_i * logistic_loss_i) / original_N + ridge * ||theta||^2 / 2",
+    "query": [
+      1.0,
+      2.0
+    ],
+    "query_gradient": [
+      -0.45884087258818074,
+      -0.9176817451763615
+    ],
+    "query_label": 1,
+    "query_loss": 0.6140419076885553,
+    "query_probability": 0.5411591274118194,
+    "rows": [
+      {
+        "adjoint_derivative": -0.042995854102773394,
+        "dquery_loss_dweight": -0.04299585410277339,
+        "dtheta_dweight": [
+          -0.06664657628019273,
+          0.08017597353868232
+        ],
+        "max_abs_solve_residual": 4.163336342344337e-17,
+        "predicted_delete_query_loss_delta": 0.04299585410277339,
+        "predicted_delete_theta_delta": [
+          0.06664657628019273,
+          -0.08017597353868232
+        ],
+        "row": 0,
+        "sample_gradient": [
+          0.32827759446757265,
+          -0.6565551889351453
+        ],
+        "solve_residual": [
+          6.938893903907228e-18,
+          -4.163336342344337e-17
+        ],
+        "training_loss": 0.39791011080824473
+      },
+      {
+        "adjoint_derivative": -0.012537832293593395,
+        "dquery_loss_dweight": -0.012537832293593391,
+        "dtheta_dweight": [
+          -0.07098941791277501,
+          0.04915721489539782
+        ],
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": 0.012537832293593391,
+        "predicted_delete_theta_delta": [
+          0.07098941791277501,
+          -0.04915721489539782
+        ],
+        "row": 1,
+        "sample_gradient": [
+          0.3785430775231464,
+          -0.3785430775231464
+        ],
+        "solve_residual": [
+          0.0,
+          -1.3877787807814457e-17
+        ],
+        "training_loss": 0.47568868261884356
+      },
+      {
+        "adjoint_derivative": -0.009407614289382147,
+        "dquery_loss_dweight": -0.009407614289382152,
+        "dtheta_dweight": [
+          0.10701592755363663,
+          -0.04325646390899194
+        ],
+        "max_abs_solve_residual": 6.938893903907228e-18,
+        "predicted_delete_query_loss_delta": 0.009407614289382152,
+        "predicted_delete_theta_delta": [
+          -0.10701592755363663,
+          0.04325646390899194
+        ],
+        "row": 2,
+        "sample_gradient": [
+          -0.5952260007095779,
+          0.29761300035478894
+        ],
+        "solve_residual": [
+          0.0,
+          6.938893903907228e-18
+        ],
+        "training_loss": 0.9044263940737021
+      },
+      {
+        "adjoint_derivative": 0.05214091585858801,
+        "dquery_loss_dweight": 0.052140915858588,
+        "dtheta_dweight": [
+          -0.07537529520818476,
+          -0.01913043353640964
+        ],
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": -0.052140915858588,
+        "predicted_delete_theta_delta": [
+          0.07537529520818476,
+          0.01913043353640964
+        ],
+        "row": 3,
+        "sample_gradient": [
+          0.45875309693457883,
+          0.22937654846728942
+        ],
+        "solve_residual": [
+          1.3877787807814457e-17,
+          6.938893903907228e-18
+        ],
+        "training_loss": 0.6138797215008903
+      },
+      {
+        "adjoint_derivative": -0.08353682696977659,
+        "dquery_loss_dweight": -0.08353682696977659,
+        "dtheta_dweight": [
+          0.08044246011148445,
+          0.05080905076751023
+        ],
+        "max_abs_solve_residual": 2.7755575615628914e-17,
+        "predicted_delete_query_loss_delta": 0.08353682696977659,
+        "predicted_delete_theta_delta": [
+          -0.08044246011148445,
+          -0.05080905076751023
+        ],
+        "row": 4,
+        "sample_gradient": [
+          -0.5138062320894808,
+          -0.5138062320894808
+        ],
+        "solve_residual": [
+          0.0,
+          -2.7755575615628914e-17
+        ],
+        "training_loss": 0.7211480351367707
+      },
+      {
+        "adjoint_derivative": -0.11949918277695347,
+        "dquery_loss_dweight": -0.11949918277695346,
+        "dtheta_dweight": [
+          0.0647315090177432,
+          0.09785279174104636
+        ],
+        "max_abs_solve_residual": 2.7755575615628914e-17,
+        "predicted_delete_query_loss_delta": 0.11949918277695346,
+        "predicted_delete_theta_delta": [
+          -0.0647315090177432,
+          -0.09785279174104636
+        ],
+        "row": 5,
+        "sample_gradient": [
+          -0.45884087258818074,
+          -0.9176817451763615
+        ],
+        "solve_residual": [
+          0.0,
+          -2.7755575615628914e-17
+        ],
+        "training_loss": 0.6140419076885553
+      },
+      {
+        "adjoint_derivative": 0.21323293823314624,
+        "dquery_loss_dweight": 0.21323293823314624,
+        "dtheta_dweight": [
+          -0.07474401116964093,
+          -0.1949884389309052
+        ],
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": -0.21323293823314624,
+        "predicted_delete_theta_delta": [
+          0.07474401116964093,
+          0.1949884389309052
+        ],
+        "row": 6,
+        "sample_gradient": [
+          0.5951408276148465,
+          1.7854224828445395
+        ],
+        "solve_residual": [
+          1.3877787807814457e-17,
+          0.0
+        ],
+        "training_loss": 0.9042159948508806
+      }
+    ],
+    "scope": "local supplied-model sensitivities, not causal attribution or guaranteed finite deletion",
+    "version": 1
+  },
+  "fixture": {
+    "X": [
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        -0.5
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "label": 1,
+    "query": [
+      1,
+      2
+    ],
+    "y": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  "undamped": {
+    "damping": 0.0,
+    "damping_scope": "H+damping*I is an inverse approximation, not a refit with larger ridge",
+    "derivative_parameter": "one unit of sample weight; base weights all 1",
+    "effective_cholesky": [
+      [
+        0.5835915732163488,
+        0.0
+      ],
+      [
+        0.19501853228057153,
+        0.8523030192881799
+      ]
+    ],
+    "effective_hessian": [
+      [
+        0.34057912432913295,
+        0.11381117205996205
+      ],
+      [
+        0.11381117205996205,
+        0.7644526646206158
+      ]
+    ],
+    "fit": {
+      "cholesky": [
+        [
+          0.5835915732163488,
+          0.0
+        ],
+        [
+          0.19501853228057153,
+          0.8523030192881799
+        ]
+      ],
+      "converged": true,
+      "gradient": [
+        1.996080384314425e-12,
+        -4.7867196317774585e-12
+      ],
+      "hessian": [
+        [
+          0.34057912432913295,
+          0.11381117205996205
+        ],
+        [
+          0.11381117205996205,
+          0.7644526646206158
+        ]
+      ],
+      "history": [
+        {
+          "iteration": 0,
+          "max_abs_gradient": 0.14285714285714285,
+          "objective": 0.6931471805599453,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 1,
+          "max_abs_gradient": 0.002861296649268069,
+          "objective": 0.6678460114370376,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 2,
+          "max_abs_gradient": 3.4119673856143617e-06,
+          "objective": 0.6678359912082825,
+          "roundoff_acceptance": false,
+          "step_scale": 1.0
+        },
+        {
+          "iteration": 3,
+          "max_abs_gradient": 4.7867196317774585e-12,
+          "objective": 0.6678359911945871
+        }
+      ],
+      "max_abs_gradient": 4.7867196317774585e-12,
+      "normalizer": 7,
+      "objective": 0.6678359911945871,
+      "parameter_error_l2_bound": 5.186233868028759e-11,
+      "ridge": 0.1,
+      "theta": [
+        -0.275487844484189,
+        0.22024887432001322
+      ],
+      "tolerance": 1e-10,
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "is_exact_undamped_derivative": true,
+    "model": "fully regularized binary logistic; explicit feature columns",
+    "objective": "sum(w_i * logistic_loss_i) / original_N + ridge * ||theta||^2 / 2",
+    "query": [
+      1.0,
+      2.0
+    ],
+    "query_gradient": [
+      -0.45884087258818074,
+      -0.9176817451763615
+    ],
+    "query_label": 1,
+    "query_loss": 0.6140419076885553,
+    "query_probability": 0.5411591274118194,
+    "rows": [
+      {
+        "actual_delete_query_loss_delta": 0.07910527287139002,
+        "actual_delete_theta_delta": [
+          0.275487844484189,
+          -0.22024887432001322
+        ],
+        "adjoint_derivative": -0.05199977959712403,
+        "delete_query_loss_error": -0.02710549327426598,
+        "dquery_loss_dweight": -0.05199977959712404,
+        "dtheta_dweight": [
+          -0.18805359208257996,
+          0.1506910806589715
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.560611910581388,
+              0.0
+            ],
+            [
+              0.31852949464851593,
+              0.7430413108370151
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            0.0,
+            0.0
+          ],
+          "hessian": [
+            [
+              0.3142857142857143,
+              0.17857142857142855
+            ],
+            [
+              0.17857142857142855,
+              0.6535714285714286
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.0,
+              "objective": 0.5941261547656673
+            }
+          ],
+          "max_abs_gradient": 0.0,
+          "normalizer": 7.0,
+          "objective": 0.5941261547656673,
+          "parameter_error_l2_bound": 0.0,
+          "ridge": 0.1,
+          "theta": [
+            0.0,
+            0.0
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 0.0,
+        "predicted_delete_query_loss_delta": 0.05199977959712404,
+        "predicted_delete_theta_delta": [
+          0.18805359208257996,
+          -0.1506910806589715
+        ],
+        "retained_mean_query_loss_delta": 0.07910527287139002,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5916079783099616,
+              0.0
+            ],
+            [
+              0.3521476061368819,
+              0.7885590636251649
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            0.0,
+            1.3877787807814457e-17
+          ],
+          "hessian": [
+            [
+              0.35,
+              0.20833333333333331
+            ],
+            [
+              0.20833333333333331,
+              0.7458333333333333
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 1.3877787807814457e-17,
+              "objective": 0.6931471805599453
+            }
+          ],
+          "max_abs_gradient": 1.3877787807814457e-17,
+          "normalizer": 6.0,
+          "objective": 0.6931471805599453,
+          "parameter_error_l2_bound": 1.3877787807814457e-16,
+          "ridge": 0.1,
+          "theta": [
+            0.0,
+            0.0
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "row": 0,
+        "sample_gradient": [
+          0.32827759446757265,
+          -0.6565551889351453
+        ],
+        "solve_residual": [
+          0.0,
+          0.0
+        ],
+        "training_loss": 0.39791011080824473
+      },
+      {
+        "actual_delete_query_loss_delta": 0.0026170270335832413,
+        "actual_delete_theta_delta": [
+          0.22869327982574755,
+          -0.11719403234662666
+        ],
+        "adjoint_derivative": -0.0030606357997382616,
+        "delete_query_loss_error": 0.00044360876615501255,
+        "dquery_loss_dweight": -0.003060635799738254,
+        "dtheta_dweight": [
+          -0.1919712491418932,
+          0.09932080674693078
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.5592608910448753,
+              0.0
+            ],
+            [
+              0.2534196864004744,
+              0.829343901283427
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            -4.0766001685454967e-17,
+            6.938893903907228e-18
+          ],
+          "hessian": [
+            [
+              0.3127727442523079,
+              0.14172771962464217
+            ],
+            [
+              0.14172771962464217,
+              0.7520328440513296
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.07142857142857142,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.00027851256540468473,
+              "objective": 0.5904527451029384,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 1.2656583957965095e-08,
+              "objective": 0.5904526910780747,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 4.0766001685454967e-17,
+              "objective": 0.5904526910780746
+            }
+          ],
+          "max_abs_gradient": 4.0766001685454967e-17,
+          "normalizer": 7.0,
+          "objective": 0.5904526910780746,
+          "parameter_error_l2_bound": 4.1352329342229294e-16,
+          "ridge": 0.1,
+          "theta": [
+            -0.04679456465844145,
+            0.10305484197338656
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": 0.003060635799738254,
+        "predicted_delete_theta_delta": [
+          0.1919712491418932,
+          -0.09932080674693078
+        ],
+        "retained_mean_query_loss_delta": 0.001774088795150508,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.590041658068326,
+              0.0
+            ],
+            [
+              0.2802565678614412,
+              0.8841558649263179
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            1.9081958235744878e-17,
+            -6.938893903907228e-18
+          ],
+          "hessian": [
+            [
+              0.34814915825601933,
+              0.16536304998550308
+            ],
+            [
+              0.16536304998550308,
+              0.86027533731308
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.08333333333333331,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.00034739745134726614,
+              "objective": 0.6887511364197387,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 1.806296770663629e-08,
+              "objective": 0.6887510619948284,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 1.9081958235744878e-17,
+              "objective": 0.6887510619948282
+            }
+          ],
+          "max_abs_gradient": 1.9081958235744878e-17,
+          "normalizer": 6.0,
+          "objective": 0.6887510619948282,
+          "parameter_error_l2_bound": 2.0304417714388973e-16,
+          "ridge": 0.1,
+          "theta": [
+            -0.05030249444548962,
+            0.10572498898836538
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "row": 1,
+        "sample_gradient": [
+          0.3785430775231464,
+          -0.3785430775231464
+        ],
+        "solve_residual": [
+          6.938893903907228e-18,
+          -1.3877787807814457e-17
+        ],
+        "training_loss": 0.47568868261884356
+      },
+      {
+        "actual_delete_query_loss_delta": 0.045526346651080796,
+        "actual_delete_theta_delta": [
+          -0.3411514342185034,
+          0.1222331107146879
+        ],
+        "adjoint_derivative": -0.03992357642967439,
+        "delete_query_loss_error": -0.005602770221406428,
+        "dquery_loss_dweight": -0.03992357642967437,
+        "dtheta_dweight": [
+          0.282299688852289,
+          -0.09764502738088249
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.5400066665788327,
+              0.0
+            ],
+            [
+              0.27682738328803197,
+              0.8015887015673585
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            5.551115123125783e-17,
+            -1.249000902703301e-16
+          ],
+          "hessian": [
+            [
+              0.2916071999495826,
+              0.149488632467111
+            ],
+            [
+              0.149488632467111,
+              0.7191778466185427
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.17857142857142855,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.011715795131796977,
+              "objective": 0.5221032544090379,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 0.00012230027313975267,
+              "objective": 0.5218467297951219,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 1.30466198330903e-08,
+              "objective": 0.5218467038651459,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 4,
+              "max_abs_gradient": 1.249000902703301e-16,
+              "objective": 0.5218467038651454
+            }
+          ],
+          "max_abs_gradient": 1.249000902703301e-16,
+          "normalizer": 7.0,
+          "objective": 0.5218467038651454,
+          "parameter_error_l2_bound": 1.3668035872266425e-15,
+          "ridge": 0.1,
+          "theta": [
+            -0.6166392787026924,
+            0.3424819850347011
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 2.7755575615628914e-17,
+        "predicted_delete_query_loss_delta": 0.03992357642967437,
+        "predicted_delete_theta_delta": [
+          -0.282299688852289,
+          0.09764502738088249
+        ],
+        "retained_mean_query_loss_delta": 0.04995118050055902,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5666315978176507,
+              0.0
+            ],
+            [
+              0.31258655672490954,
+              0.8476897568918702
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            6.38378239159465e-16,
+            -1.1934897514720433e-15
+          ],
+          "hessian": [
+            [
+              0.32107136764538385,
+              0.17712142009335322
+            ],
+            [
+              0.17712142009335322,
+              0.8162882793845331
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.20833333333333331,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.01535965863837397,
+              "objective": 0.6048324833075773,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 0.0002067029195948894,
+              "objective": 0.6044235267348574,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 3.723771650754326e-08,
+              "objective": 0.6044234571246688,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 4,
+              "max_abs_gradient": 1.1934897514720433e-15,
+              "objective": 0.6044234571246666
+            }
+          ],
+          "max_abs_gradient": 1.1934897514720433e-15,
+          "normalizer": 6.0,
+          "objective": 0.6044234571246666,
+          "parameter_error_l2_bound": 1.3534934662203356e-14,
+          "ridge": 0.1,
+          "theta": [
+            -0.657052354676617,
+            0.35811804514305406
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "row": 2,
+        "sample_gradient": [
+          -0.5952260007095779,
+          0.29761300035478894
+        ],
+        "solve_residual": [
+          -2.7755575615628914e-17,
+          0.0
+        ],
+        "training_loss": 0.9044263940737021
+      },
+      {
+        "actual_delete_query_loss_delta": -0.10572227857459393,
+        "actual_delete_theta_delta": [
+          0.208935733800577,
+          0.018898135644311587
+        ],
+        "adjoint_derivative": 0.09972811619328321,
+        "delete_query_loss_error": 0.005994162381310744,
+        "dquery_loss_dweight": 0.09972811619328319,
+        "dtheta_dweight": [
+          -0.18742617095994682,
+          -0.014960882066495857
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.5525980620070211,
+              0.0
+            ],
+            [
+              0.14750269096112167,
+              0.8466503209934322
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            -2.195474704813627e-12,
+            -8.723584354886071e-12
+          ],
+          "hessian": [
+            [
+              0.3053646181339156,
+              0.0815097011659364
+            ],
+            [
+              0.0815097011659364,
+              0.7385738098790539
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.17857142857142855,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.0035824264842467465,
+              "objective": 0.5730006984991386,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 4.724626617109984e-06,
+              "objective": 0.5729920256654455,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 8.723584354886071e-12,
+              "objective": 0.5729920256500481
+            }
+          ],
+          "max_abs_gradient": 8.723584354886071e-12,
+          "normalizer": 7.0,
+          "objective": 0.5729920256500481,
+          "parameter_error_l2_bound": 8.995611884485096e-11,
+          "ridge": 0.1,
+          "theta": [
+            -0.06655211068361201,
+            0.2391470099643248
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": -0.09972811619328319,
+        "predicted_delete_theta_delta": [
+          0.18742617095994682,
+          0.014960882066495857
+        ],
+        "retained_mean_query_loss_delta": -0.10801862792840378,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5823760294504958,
+              0.0
+            ],
+            [
+              0.16312526885420656,
+              0.9035034767313198
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            -3.6326948393838876e-12,
+            -1.478264038956567e-11
+          ],
+          "hessian": [
+            [
+              0.33916183967852476,
+              0.09500024637835745
+            ],
+            [
+              0.09500024637835745,
+              0.8429283858043398
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.20833333333333331,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.004410474750518995,
+              "objective": 0.667975610819277,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 6.47270500698377e-06,
+              "objective": 0.6679640930348807,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 1.478264038956567e-11,
+              "objective": 0.6679640930096559
+            }
+          ],
+          "max_abs_gradient": 1.478264038956567e-11,
+          "normalizer": 6.0,
+          "objective": 0.6679640930096559,
+          "parameter_error_l2_bound": 1.5222448182973217e-10,
+          "ridge": 0.1,
+          "theta": [
+            -0.07129261470391379,
+            0.24440355194106117
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "row": 3,
+        "sample_gradient": [
+          0.45875309693457883,
+          0.22937654846728942
+        ],
+        "solve_residual": [
+          1.3877787807814457e-17,
+          0.0
+        ],
+        "training_loss": 0.6138797215008903
+      },
+      {
+        "actual_delete_query_loss_delta": 0.18755048247976092,
+        "actual_delete_theta_delta": [
+          -0.22132168654579104,
+          -0.07498019456733795
+        ],
+        "adjoint_derivative": -0.1503128810309133,
+        "delete_query_loss_error": -0.03723760144884761,
+        "dquery_loss_dweight": -0.1503128810309133,
+        "dtheta_dweight": [
+          0.19303541996553605,
+          0.06727859720216561
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.5487427083021542,
+              0.0
+            ],
+            [
+              0.15422295547899467,
+              0.8429503768950393
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            2.021337958124647e-11,
+            -2.8060264181672956e-11
+          ],
+          "hessian": [
+            [
+              0.3011185599147831,
+              0.08462872227190608
+            ],
+            [
+              0.08462872227190608,
+              0.7343500579041647
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.14285714285714285,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.003310203115676187,
+              "objective": 0.5539587860615316,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 6.9908730655158374e-06,
+              "objective": 0.5539351201668694,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 2.8060264181672956e-11,
+              "objective": 0.5539351200741781
+            }
+          ],
+          "max_abs_gradient": 2.8060264181672956e-11,
+          "normalizer": 7.0,
+          "objective": 0.5539351200741781,
+          "parameter_error_l2_bound": 3.458264217842283e-10,
+          "ridge": 0.1,
+          "theta": [
+            -0.49680953102998004,
+            0.14526867975267527
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 1.3877787807814457e-17,
+        "predicted_delete_query_loss_delta": 0.1503128810309133,
+        "predicted_delete_theta_delta": [
+          -0.19303541996553605,
+          -0.06727859720216561
+        ],
+        "retained_mean_query_loss_delta": 0.19558144163489422,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5771697188005631,
+              0.0
+            ],
+            [
+              0.17338705688129652,
+              0.8983478354572227
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            5.945378217520059e-11,
+            -8.196671640037234e-11
+          ],
+          "hessian": [
+            [
+              0.33312488430032106,
+              0.10007375886383515
+            ],
+            [
+              0.10007375886383515,
+              0.8370919049646353
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.16666666666666666,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.004384005850402188,
+              "objective": 0.6439454427807312,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 1.2043958255023718e-05,
+              "objective": 0.6439076581658045,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 8.196671640037234e-11,
+              "objective": 0.6439076579155677
+            }
+          ],
+          "max_abs_gradient": 8.196671640037234e-11,
+          "normalizer": 6.0,
+          "objective": 0.6439076579155677,
+          "parameter_error_l2_bound": 1.0125855426775194e-09,
+          "ridge": 0.1,
+          "theta": [
+            -0.5234069761574982,
+            0.15130850816685132
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        },
+        "row": 4,
+        "sample_gradient": [
+          -0.5138062320894808,
+          -0.5138062320894808
+        ],
+        "solve_residual": [
+          -1.3877787807814457e-17,
+          0.0
+        ],
+        "training_loss": 0.7211480351367707
+      },
+      {
+        "actual_delete_query_loss_delta": 0.30565521120251515,
+        "actual_delete_theta_delta": [
+          -0.18749671453998362,
+          -0.19432459003835695
+        ],
+        "adjoint_derivative": -0.20320426327204988,
+        "delete_query_loss_error": -0.1024509479304653,
+        "dquery_loss_dweight": -0.20320426327204985,
+        "dtheta_dweight": [
+          0.14223124633313386,
+          0.15031655017692455
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.55074948284605,
+              0.0
+            ],
+            [
+              0.06693897673708353,
+              0.7897867814389926
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            1.9913931614823355e-13,
+            -2.1980594427928324e-13
+          ],
+          "hessian": [
+            [
+              0.30332499285519143,
+              0.03686660682019252
+            ],
+            [
+              0.03686660682019252,
+              0.6282439867423709
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.14285714285714285,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.001664735763734236,
+              "objective": 0.5612616409746125,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 7.499031782071119e-07,
+              "objective": 0.5612568052133005,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 2.1980594427928324e-13,
+              "objective": 0.5612568052120921
+            }
+          ],
+          "max_abs_gradient": 2.1980594427928324e-13,
+          "normalizer": 7.0,
+          "objective": 0.5612568052120921,
+          "parameter_error_l2_bound": 2.9659925889403947e-12,
+          "ridge": 0.1,
+          "theta": [
+            -0.4629845590241726,
+            0.02592428428165626
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "max_abs_solve_residual": 2.7755575615628914e-17,
+        "predicted_delete_query_loss_delta": 0.20320426327204985,
+        "predicted_delete_theta_delta": [
+          -0.14223124633313386,
+          -0.15031655017692455
+        ],
+        "retained_mean_query_loss_delta": 0.3172313635350712,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5796142383198316,
+              0.0
+            ],
+            [
+              0.07457920908400545,
+              0.8413634358319573
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            6.332503965644776e-13,
+            -6.976684854831383e-13
+          ],
+          "hessian": [
+            [
+              0.33595266526307854,
+              0.04322717146772129
+            ],
+            [
+              0.04322717146772129,
+              0.713454489582552
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.16666666666666666,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.0022322173962044042,
+              "objective": 0.6529257770081854,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 1.3414344839646208e-06,
+              "objective": 0.6529179018194634,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 6.976684854831383e-13,
+              "objective": 0.6529179018159581
+            }
+          ],
+          "max_abs_gradient": 6.976684854831383e-13,
+          "normalizer": 6.0,
+          "objective": 0.6529179018159581,
+          "parameter_error_l2_bound": 9.422034707988524e-12,
+          "ridge": 0.1,
+          "theta": [
+            -0.48616656173592526,
+            0.027926914139259514
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "row": 5,
+        "sample_gradient": [
+          -0.45884087258818074,
+          -0.9176817451763615
+        ],
+        "solve_residual": [
+          -1.3877787807814457e-17,
+          -2.7755575615628914e-17
+        ],
+        "training_loss": 0.6140419076885553
+      },
+      {
+        "actual_delete_query_loss_delta": -0.44855337973180787,
+        "actual_delete_theta_delta": [
+          0.275487844484189,
+          0.6372352747686103
+        ],
+        "adjoint_derivative": 0.3530261698849029,
+        "delete_query_loss_error": 0.09552720984690505,
+        "dquery_loss_dweight": 0.3530261698849028,
+        "dtheta_dweight": [
+          -0.14537028866471494,
+          -0.31200832019445157
+        ],
+        "fixed_normalizer_refit": {
+          "cholesky": [
+            [
+              0.5147131707982255,
+              0.0
+            ],
+            [
+              0.0,
+              0.569683336764429
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            0.0,
+            -3.037806117767161e-12
+          ],
+          "hessian": [
+            [
+              0.26492964819316334,
+              0.0
+            ],
+            [
+              0.0,
+              0.3245391041870538
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.3571428571428571,
+              "objective": 0.5941261547656673,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.035582347233923534,
+              "objective": 0.45274536910750973,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 0.0012334128945940132,
+              "objective": 0.45089209085098,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 1.663379517569119e-06,
+              "objective": 0.45088975128065006,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 4,
+              "max_abs_gradient": 3.037806117767161e-12,
+              "objective": 0.45088975127638736
+            }
+          ],
+          "max_abs_gradient": 3.037806117767161e-12,
+          "normalizer": 7.0,
+          "objective": 0.45088975127638736,
+          "parameter_error_l2_bound": 3.037806117767161e-11,
+          "ridge": 0.1,
+          "theta": [
+            0.0,
+            0.8574841490886236
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0
+          ]
+        },
+        "max_abs_solve_residual": 5.551115123125783e-17,
+        "predicted_delete_query_loss_delta": -0.3530261698849028,
+        "predicted_delete_theta_delta": [
+          0.14537028866471494,
+          0.31200832019445157
+        ],
+        "retained_mean_query_loss_delta": -0.4603711258158387,
+        "retained_mean_refit": {
+          "cholesky": [
+            [
+              0.5371807593745227,
+              0.0
+            ],
+            [
+              0.0,
+              0.5926738878516502
+            ]
+          ],
+          "converged": true,
+          "gradient": [
+            0.0,
+            -1.5172668677010392e-11
+          ],
+          "hessian": [
+            [
+              0.28856316824218886,
+              0.0
+            ],
+            [
+              0.0,
+              0.3512623373411904
+            ]
+          ],
+          "history": [
+            {
+              "iteration": 0,
+              "max_abs_gradient": 0.41666666666666663,
+              "objective": 0.6931471805599453,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 1,
+              "max_abs_gradient": 0.04500235684756221,
+              "objective": 0.5223376111542831,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 2,
+              "max_abs_gradient": 0.0018818447841048719,
+              "objective": 0.519630794351408,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 3,
+              "max_abs_gradient": 3.766038338487432e-06,
+              "objective": 0.5196257669813007,
+              "roundoff_acceptance": false,
+              "step_scale": 1.0
+            },
+            {
+              "iteration": 4,
+              "max_abs_gradient": 1.5172668677010392e-11,
+              "objective": 0.5196257669611122
+            }
+          ],
+          "max_abs_gradient": 1.5172668677010392e-11,
+          "normalizer": 6.0,
+          "objective": 0.5196257669611122,
+          "parameter_error_l2_bound": 1.5172668677010392e-10,
+          "ridge": 0.1,
+          "theta": [
+            0.0,
+            0.8975618006669129
+          ],
+          "tolerance": 1e-10,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.0
+          ]
+        },
+        "row": 6,
+        "sample_gradient": [
+          0.5951408276148465,
+          1.7854224828445395
+        ],
+        "solve_residual": [
+          0.0,
+          5.551115123125783e-17
+        ],
+        "training_loss": 0.9042159948508806
+      }
+    ],
+    "scope": "local supplied-model sensitivities, not causal attribution or guaranteed finite deletion",
+    "version": 1
+  },
+  "version": 1
+}

@@ -1,0 +1,33 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m influencelab demo > /tmp/demo.json
+          python -m influencelab audit examples/input.json > /tmp/input.json
+          python examples/render_demo.py --check
+          python -c "import json; from pathlib import Path; a=json.loads(Path('examples/demo.json').read_text()); assert json.loads(Path('/tmp/demo.json').read_text())==a; assert json.loads(Path('/tmp/input.json').read_text())==a['undamped']"
+      - run: |
+          python -m pip wheel --no-deps -w /tmp/wheels .
+          python -m pip install --no-deps --target /tmp/installed /tmp/wheels/*.whl
+          cd /tmp
+          python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" demo > /tmp/wheel-demo.json
+          python -I -c "import sys; sys.path.insert(0,'/tmp/installed'); from influencelab.__main__ import main; main()" audit "$GITHUB_WORKSPACE/examples/input.json" > /tmp/wheel-input.json
+          python -c "import json; from pathlib import Path; assert json.loads(Path('/tmp/demo.json').read_text())==json.loads(Path('/tmp/wheel-demo.json').read_text()); assert json.loads(Path('/tmp/input.json').read_text())==json.loads(Path('/tmp/wheel-input.json').read_text())"
