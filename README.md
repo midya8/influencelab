@@ -53,7 +53,7 @@ The damped inverse uses `H + delta I` **at the original fit**. It is labeled an 
 
 ## Verification
 
-26 tests cover:
+43 tests cover the original fit/influence checks below and the path checks described in [PATHS.md](PATHS.md):
 
 - Independent loss/gradient/curvature references, all gradient/Hessian finite differences, scalar fit versus a separate monotone bisection optimizer, and all influence coordinates versus two-sided weight-perturbed refits.
 - Cholesky reconstruction, independent two-dimensional inverse, primal/adjoint agreement, solve residuals, weighted curvature sum-of-squares and strong-convexity parameter-error bounds.
@@ -61,7 +61,17 @@ The damped inverse uses `H + delta I` **at the original fit**. It is labeled an 
 - Backtracking on a dedicated developed stress fixture, explicit nonconvergence errors, stable extreme logits, strict inputs/JSON, no mutation or global RNG use, and byte-reproducible output.
 - Three SVG tests check all 42 table cells and positions, the signed deletion error and fit count, full compressed report metadata, hidden refit-Hessian tampering and byte-exact regeneration.
 
-CI runs Python 3.10-3.13, the demo/caller CLI paths, the SVG check and full-JSON parity from an installed four-module wheel outside the checkout. The demo's 15 base/deletion fits all have max absolute gradient at most `8.197e-11`; the undamped influence solve residual is at most `5.551e-17`. These are numerical residuals, not statistical uncertainty.
+CI runs Python 3.10-3.13, the demo/caller CLI paths, the SVG check and full-JSON parity from an installed five-module wheel outside the checkout. The demo's 15 base/deletion fits all have max absolute gradient at most `8.197e-11`; the undamped influence solve residual is at most `5.551e-17`. These are numerical residuals, not statistical uncertainty.
+
+## Finite-deletion path extension
+
+![Finite deletion paths](assets/deletion-paths.svg)
+
+`trace_deletion` and the `path-demo` / `trace INPUT.json` CLI paths continuously lower selected sample weights from 1 to 0 with the original normalizer and ridge fixed. Each grid node is a new converged fit with a new implicit parameter/query derivative. Composite Simpson and trapezoid estimates at 2, 4, 8, 16 segments reuse the same fine-grid nodes and are compared with the direct endpoint loss change. [Derivation and limits](PATHS.md), [full report](examples/path-demo.json), [caller input](examples/path-input.json).
+
+On the developed fixture, row 5's frozen first-order prediction is+0.203204 versus endpoint+0.305655; Simpson 16 gives+0.305655349 with measured gap+1.381e-7. Deleting rows 5 and 6 jointly gives-0.357507, not the sum of individual deletion changes-0.142898. Deleting all 7 rows reverses the frozen prediction's sign: first-order-0.004253, endpoint+0.079105. Its Simpson 16gap is still+0.000744 and is shown, not hidden.
+
+14 new behavior tests independently check interior derivatives, grouped endpoints, normalization, local sum identities, polynomial quadrature, group nonadditivity and all-row sign reversal, plus grid-fit reuse and strict inputs. Three more SVG tests check all table cells, all 51 polyline points, full metadata and hidden interior-Hessian tampering. The five-module wheel reproduces all 4 CLI reports outside checkout; both SVGs are byte-reproducible. The original demo and original SVG are unchanged. This is a numerical retraining reference, not a certified integration error bound, scalable deletion method or unlearning guarantee.
 
 ## Scope and attribution
 
