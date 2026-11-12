@@ -1,6 +1,11 @@
 # InfluenceLab
 
-Small convex influence functions, with a real deletion reference instead of a promise that a derivative predicts retraining.
+InfluenceLab fits a small regularized logistic-regression model and differentiates training-row weights. It compares the local influence prediction with converged deletion refits rather than assuming that a derivative predicts a full retraining.
+
+Two calculations keep the approximation and reference separate:
+
+- [Fit and influence](DESIGN.md): sample-weight derivatives, linear deletion predictions and two finite-deletion normalization conventions.
+- [Deletion paths](PATHS.md): refit along a selected weight path, recompute its derivative and compare numerical integral estimates with the endpoint loss change.
 
 ![Influence and deletion audit](assets/influence-audit.svg)
 
@@ -29,7 +34,7 @@ report = audit(
 
 There is no automatic intercept or standardization. The constant first column above is an explicit **regularized** intercept. `fit` supports nonnegative weights and an explicit normalizer; `audit` starts from all-one weights. Inputs are small dense numeric arrays, not text, datasets or model checkpoints. See [DESIGN.md](DESIGN.md) for equations, limits and numerical behavior. [Full deterministic output](examples/demo.json).
 
-## What the fixture actually shows
+## Development fixture results
 
 This seven-row synthetic fixture was developed alongside the implementation. It is not an untouched benchmark or a reproduction of a published experiment. The query is `(1,2)` with label 1, ridge is 0.1, and the original row count is 7. The fitted theta is approximately `(-0.275488, 0.220249)` and query loss is `0.614042`.
 
@@ -69,7 +74,7 @@ CI runs Python 3.10-3.13, the demo/caller CLI paths, the SVG check and full-JSON
 
 `trace_deletion` and the `path-demo` / `trace INPUT.json` CLI paths continuously lower selected sample weights from 1 to 0 with the original normalizer and ridge fixed. Each grid node is a new converged fit with a new implicit parameter/query derivative. Composite Simpson and trapezoid estimates at 2, 4, 8, 16 segments reuse the same fine-grid nodes and are compared with the direct endpoint loss change. [Derivation and limits](PATHS.md), [full report](examples/path-demo.json), [caller input](examples/path-input.json).
 
-On the developed fixture, row 5's frozen first-order prediction is+0.203204 versus endpoint+0.305655; Simpson 16 gives+0.305655349 with measured gap+1.381e-7. Deleting rows 5 and 6 jointly gives-0.357507, not the sum of individual deletion changes-0.142898. Deleting all 7 rows reverses the frozen prediction's sign: first-order-0.004253, endpoint+0.079105. Its Simpson 16gap is still+0.000744 and is shown, not hidden.
+On the developed fixture, row 5's frozen first-order prediction is +0.203204 versus endpoint +0.305655; Simpson 16 gives +0.305655349 with measured gap +1.381e-7. Deleting rows 5 and 6 jointly gives -0.357507, not the sum of individual deletion changes -0.142898. Deleting all 7 rows reverses the frozen prediction's sign: first-order -0.004253, endpoint +0.079105. Its Simpson 16 gap is still +0.000744 and is shown, not hidden.
 
 14 new behavior tests independently check interior derivatives, grouped endpoints, normalization, local sum identities, polynomial quadrature, group nonadditivity and all-row sign reversal, plus grid-fit reuse and strict inputs. Three more SVG tests check all table cells, all 51 polyline points, full metadata and hidden interior-Hessian tampering. The five-module wheel reproduces all 4 CLI reports outside checkout; both SVGs are byte-reproducible. The original demo and original SVG are unchanged. This is a numerical retraining reference, not a certified integration error bound, scalable deletion method or unlearning guarantee.
 
