@@ -1,4 +1,4 @@
-# Model, derivative and numerical contract
+# InfluenceLab fit and influence method
 
 ## One objective, one weight convention
 
